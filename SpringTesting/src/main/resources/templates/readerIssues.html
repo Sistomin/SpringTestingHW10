@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Reader's issues:</title>
+</head>
+<body>
+<h3>List of all issues by reader <span th:text="${readerInfo}"></span>:</h3>
+<table>
+    <tr>
+        <th>Issue ID</th>
+        <th>Book ID</th>
+        <th>Reader ID</th>
+        <th>Issued at</th>
+        <th>Returned at</th>
+    </tr>
+    <tr th:each="issue : ${issues}">
+        <td th:text="${issue.id}"></td>
+        <td><a th:href="@{/ui/books/{id}(id=${issue.bookId})}" th:text="${issue.bookId}"></a></td>
+        <td><a th:href="@{/ui/readers/{id}(id=${issue.readerId})}" th:text="${issue.readerId}"></a></td>
+        <td th:text="${issue.issuedAt}"></td>
+        <td th:text="${issue.returnedAt}"></td>
+    </tr>
+</table>
+</body>
+</html>

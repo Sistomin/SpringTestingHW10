@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Readers</title>
+</head>
+<body>
+<h3>List of all readers:</h3>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+    </tr>
+    <tr th:each="reader : ${readers}">
+        <td th:text="${reader.getId()}"></td>
+        <td th:text="${reader.getName()}"></td>
+    </tr>
+</table>
+</body>
+</html>
